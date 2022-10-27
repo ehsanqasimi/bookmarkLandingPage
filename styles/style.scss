@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+$theFont: 'Rubik', sans-serif;
+$SoftBlue: hsl(231, 69%, 60%);
+$SoftRed: hsl(0, 94%, 66%);
+$GrayishBlue: hsl(229, 8%, 60%);
+$VeryDarkBlue: hsl(229, 31%, 21%);
+
+button {
+    font-family: $theFont;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    background-color: $GrayishBlue;
+    height: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $theFont;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.container {
+    padding: 30px;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .close {
+            display: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .burger {
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .logo {
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: flex-start;
+            align-items: center;
+            background-color: hsla(229, 31%, 21%, 0.925);
+            color: white;
+            letter-spacing: 3px;
+            height: 100vh;
+            padding: 30px;
+            padding-top: 100px;
+
+            li {
+                border-top: 0.5px solid $GrayishBlue;
+                width: 100%;
+                text-align: center;
+                padding-block: 25px;
+                cursor: pointer;
+                a{
+                    transition: color 200ms ease-in-out;
+
+                }
+                a:hover{
+                    color: $SoftRed;
+                }
+
+                &:last-child {
+                    padding-top: 50px;
+                }
+
+                .login {
+                    border: 2px solid white;
+                    padding: 10px 170px;
+                    border-radius: 5px;    
+                    transition: all 200ms ease-in-out;
+                    &:hover{
+                        outline: 2px solid $SoftRed;
+                        background-color: white;
+                    }
+                }
+            }
+
+            .socialIcons {
+                display: flex;
+                gap: 30px;
+                height: 50%;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        .heroImage {
+            position: relative;
+            margin-top: 80px;
+            z-index: -15;
+
+            img {
+                width: 100%;
+                z-index: -5;
+            }
+
+            .imageBackground {
+                z-index: -6;
+                width: 100%;
+                height: 230px;
+                background-color: $SoftBlue;
+                border-radius: 0 0 0 100px;
+                position: absolute;
+                top: 20%;
+                left: 70px;
+            }
+        }
+
+        .heroData {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            p {
+                color: $GrayishBlue;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+
+                .getOnChrome {
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    background-color: $SoftBlue;
+                    color: white;
+                    font-family: $theFont;
+                    cursor: pointer;
+                }
+
+                .getOnFirefox {
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    background-color: #F7F7F7;
+                    color: $VeryDarkBlue;
+                    font-weight: 400;
+                    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.144);
+                    font-family: $theFont;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .featuresContainer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 150px;
+
+        .featureTexts {
+            // border: 1px solid red;
+            display: grid;
+            gap: 20px;
+
+            p {
+                color: $GrayishBlue;
+            }
+        }
+
+        .featureContainer {
+            ul {
+                margin-bottom: 50px;
+                border-bottom: 1px solid gray;
+
+                li {
+                    padding-block: 20px;
+                    border-top: 1px solid gray;
+                    transition: color 200ms ease-in-out;
+                    &:hover{
+                        color: $SoftRed;
+                    }
+                }
+
+                .active {
+                    border-bottom: 3px solid $SoftRed;
+                }
+            }
+
+            .feature {
+                gap: 80px;
+                display: flex;
+                flex-direction: column;
+
+                .moreInfo {
+                    background-color: $SoftBlue;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 15px 40px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    width: 50%;
+                    display: none;
+                }
+
+                .image {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .imageBackground {
+                        z-index: -1;
+                        width: 100%;
+                        height: 230px;
+                        background-color: $SoftBlue;
+                        border-radius: 0 0 100px 0;
+                        position: absolute;
+                        top: 20%;
+                        right: 50px;
+                    }
+                }
+
+                .featureDetail {
+                    display: grid;
+                    gap: 15px;
+
+                    h1 {
+                        color: $VeryDarkBlue;
+                    }
+
+                    p {
+                        color: $GrayishBlue;
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .download {
+        margin-block: 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .browserCards{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            .browserCard {
+                box-shadow: 0 5px 10px 5px rgba(128, 128, 128, 0.149);
+                border-radius: 5px;
+                width: 80%;
+    
+                img {
+                    padding: 50px 0 30px 0;
+                }
+    
+                .dot {
+                    width: 100%;
+                    padding: 20px 0;
+                }
+    
+                h1 {
+                    color: $VeryDarkBlue;
+    
+                }
+    
+                p {
+                    padding: 20px 0;
+                    color: $GrayishBlue;
+                }
+    
+                button {
+                    background-color: $SoftBlue;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 15px 40px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    transition: all 200ms ease-in-out;
+                    &:hover{
+                        outline: 2px solid $SoftBlue;
+                        background-color: white;
+                        color: $SoftBlue;
+                    }
+                }
+    
+            }
+
+        }
+
+    }
+
+    .faq {
+        text-align: center;
+
+        h1 {
+            color: $VeryDarkBlue;
+        }
+
+        p {
+            color: $GrayishBlue;
+            padding-top: 20px;
+            line-height: 30px;
+        }
+
+        .faqDropdowns {
+            padding-block: 50px;
+
+            .faqDropdown {
+                text-align: left;
+                border-bottom: 1px solid gray;
+
+                .question {
+                    color: $VeryDarkBlue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    span {
+                        cursor: pointer;
+                        color: $SoftBlue;
+                        font-size: 2rem;
+                    }
+                }
+
+                hr {
+                    border: none;
+                    background-color: $GrayishBlue;
+                    height: 1px;
+                    margin-top: 10px;
+                    display: block;
+                }
+
+                .answer {
+                    color: $GrayishBlue;
+                    line-height: 30px;
+                    display: none;
+                }
+            }
+
+        }
+
+        button {
+            background-color: $SoftBlue;
+            border: none;
+            outline: none;
+            padding: 20px 40px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+            &:hover{
+                background-color: white;
+                outline: 2px solid $SoftBlue;
+                color: $SoftBlue;
+            }
+        }
+
+    }
+
+    .inTouch {
+        text-align: center;
+        background-color: $SoftBlue;
+        color: white;
+        margin-top: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 0 0 100px $SoftBlue;
+
+        .joined {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        form {
+            text-align: start;
+            .emailContainer {
+                width: 100%;
+                background-color: white;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                padding: 15px;
+
+                &::placeholder {
+                    color: $GrayishBlue;
+                    font-family: $theFont;
+                    font-size: 1.1rem;
+                }
+            }
+            .error{
+                display: none;
+                color: white;
+                background-color: hsl(0, 94%, 66%);
+                padding: 10px;
+                border-radius: 0 0 10px 10px;
+                font-style: italic;
+                margin-top: -10px;
+            }
+
+            .submit {
+                background-color: $SoftRed;
+                border: none;
+                outline: none;
+                color: white;
+                width: 100%;
+                padding: 15px;
+                font-family: $theFont;
+                font-weight: 300;
+                font-size: 1.1rem;
+                border-radius: 5px;
+                margin-top: 15px;
+                transition: all 200ms ease-in-out;
+                &:hover{
+                    color: $SoftRed;
+                    background-color: white;
+                    outline: 3px solid $SoftRed;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: $VeryDarkBlue;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 100px;
+        box-shadow: 0 0 0 50px $VeryDarkBlue;
+        gap: 40px;
+
+        ul {
+            display: grid;
+            gap: 30px;
+            letter-spacing: 3px;
+            li{
+                transition: color 200ms ease-in-out;
+                &:hover{
+                    color: $SoftRed;
+                }
+            }
+        }
+
+        .socialIcons {
+            display: flex;
+            gap: 40px;
+            img{
+                path{
+                    fill: #000;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:900px) {
+    .container {
+        padding: 50px 100px;
+
+        nav {
+            .burger {
+                display: none;
+            }
+
+            .ul {
+                display: flex;
+                padding: 0;
+                flex-direction: row;
+                align-items: unset;
+                justify-content: unset;
+                width: auto;
+                height: auto;
+                position: static;
+                background-color: transparent;
+                gap: 50px;
+                transform: translate(0, 0);
+
+                li {
+                    border: none;
+                    width: auto;
+                    text-align: right;
+                    padding: 0;
+
+                    a {
+                        cursor: pointer;
+                        color: $VeryDarkBlue;
+                    }
+
+                    &:last-child {
+                        padding: 0;
+                    }
+
+                    .login {
+                        border: none;
+                        padding: 0;
+                        border-radius: 0;
+                        background-color: $SoftRed;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                    }
+
+                }
+
+                .socialIcons {
+                    display: none;
+                }
+            }
+        }
+
+        .hero {
+            flex-direction: row-reverse;
+            align-items: center;
+            margin-top: 100px;
+
+            .heroImage {
+                .imageBackground {
+                    height: 330px;
+                    margin-top: 40px;
+                    margin-left: 120px;
+                }
+            }
+
+            .heroData {
+                text-align: left;
+                width: 50%;
+
+                h1 {
+                    font-size: 3rem;
+                }
+
+                p {
+                    width: 80%;
+                    line-height: 28px;
+                    font-size: 1.15rem;
+                }
+
+                .buttons {
+                    justify-content: start;
+
+                    .getOnChrome {
+                        transition: all .3s ease-in-out;
+                    }
+
+                    .getOnFirefox {
+                        transition: all .3s ease-in-out;
+                    }
+
+                    .getOnChrome:hover {
+                        border: 2px solid $SoftBlue;
+                        background-color: transparent;
+                        color: $SoftBlue;
+                    }
+
+                    .getOnFirefox:hover {
+                        border: 2px solid $VeryDarkBlue;
+                        background-color: transparent;
+                        color: $VeryDarkBlue;
+                    }
+                }
+            }
+        }
+        .featuresContainer{
+            align-items: center;
+            .featureTexts{
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                
+            }
+            .featureContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                ul{
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    gap: 30px;
+                    border: none;
+                    border-bottom: 1px solid gray;
+                    width: 40%;
+                    li{
+                        border: none;
+                        text-align: center;
+                    }
+                }
+                .feature{
+                    flex-direction: row;
+                    gap: 50px;
+                    .image{
+                        width: 50%;
+                    }
+                    .featureDetail{
+                        width: 50%;
+                        gap: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: left;
+                        .tab-header{
+                            margin: 0;
+                            padding: 0;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+        .download{
+            .browserCards{
+                flex-direction: row;
+                gap: 20px;
+                .browserCard:nth-child(2){
+                    margin-top: 50px;
+                }
+                .browserCard:last-child{
+                    margin-top: 100px;
+                }
+            }
+
+        }
+        .faq{
+            padding-inline: 400px;
+            .faqDropdowns{
+                .faqDropdown{
+                    .question{
+                        &:hover{
+                            color: $SoftRed;
+                        }
+                    }
+                }
+            }
+        }
+        .inTouch{
+            padding-inline: 400px;
+        }
+        footer{
+            flex-direction: row;
+            margin-top: 200px;
+            box-shadow: 0 0 0 100px $VeryDarkBlue;
+            justify-content: space-between;
+
+            ul{
+                flex-direction: row;
+                display: flex;
+            }
+            .socialIcons{
+                cursor: pointer;
+            }
+        }
+
+    }
+}
